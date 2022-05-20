@@ -1,0 +1,70 @@
+@import "../../../App.scss";
+
+.header {
+  width: 100%;
+  height: 80px;
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.header__title {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 144.4%;
+  color: $primary-gold;
+  margin-left: -20px;
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "HelveticaNeueCyr";
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  color: $white-color;
+  padding: 10px;
+  padding-bottom: 23px;
+  margin-right: 23px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-bottom: 2px solid $white-color;
+  }
+}
+
+.nav__link-act {
+  border-bottom: 2px solid $white-color;
+}
+
+.header__categor {
+  margin-left: 170px;
+  display: flex;
+  align-items: center;
+}
+
+.hecate__btn {
+  font-size: 30px;
+  color: $white-color;
+  background: transparent;
+  border: none;
+  margin-left: 5px;
+}

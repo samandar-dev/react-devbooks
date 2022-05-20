@@ -1,0 +1,73 @@
+@import "../../../App.scss";
+
+.hero {
+  width: 100%;
+  height: auto;
+  padding-top: 54px;
+}
+
+.hero__inner {
+  position: relative;
+  width: 100%;
+}
+
+.hero__title {
+  position: absolute;
+  top: 45px;
+  left: 85px;
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 61px;
+  line-height: 67px;
+  color: $primary-gold;
+  z-index: 5;
+}
+
+.hero__btns {
+  position: absolute;
+  bottom: 85px;
+  left: 85px;
+  z-index: 5;
+}
+
+.hero__btn {
+  width: 58px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  border: none;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+}
+
+.hero__btn-act {
+  background: rgba(255, 255, 255, 1);
+}
+
+.hero__slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 21px;
+}
+
+.hero__list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.hero__item {
+  width: 100%;
+  max-width: 1260px;
+  height: 100%;
+  border-radius: 21px;
+}

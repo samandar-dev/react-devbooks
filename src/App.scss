@@ -1,0 +1,36 @@
+@import "./assets/Sass/block";
+@import "./assets/Font/fonts";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background: #191919;
+  font-family: "Steinbeck";
+  // font-family: "Rotterburg Stylish FREE";
+  // font-family: "HelveticaNeueCyr";
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
