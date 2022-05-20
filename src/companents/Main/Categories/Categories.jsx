@@ -82,7 +82,7 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
             </div>
 
             <div className="categor__menus catmenus">
-              <Card categorObj={categorObj} newCategorArr={newCategorArr} />
+              <Card categorObj={categorObj} newCategorArr={newCategorArr} setNewCategorArr={setNewCategorArr} />
             </div>
           </div>
         </div>

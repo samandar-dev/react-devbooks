@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function Card({ categorObj, newCategorArr }) {
+function Card({ categorObj, newCategorArr, setNewCategorArr }) {
+
+  useEffect(() => {
+    return () => {
+      setNewCategorArr(categorObj)
+    };
+  }, []);
+
   return (
     <>
       <ul className="catmenus__list">
