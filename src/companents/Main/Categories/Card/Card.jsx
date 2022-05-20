@@ -1,12 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 function Card({ categorObj, newCategorArr, setNewCategorArr }) {
-
-  useEffect(() => {
-    return () => {
-      setNewCategorArr(categorObj)
-    };
-  }, []);
 
   return (
     <>

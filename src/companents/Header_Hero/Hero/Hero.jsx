@@ -52,28 +52,28 @@ function Hero() {
       }))
   }
 
-  const autoSlider = () => {
-    setInterval(() => {
-      setSliderCount(sliderCount + 1)
-      setSliderImg(
-        sliderImg.map((itm, i) => {
-          if (id === itm.id) {
-            return {
-              ...itm,
-              act: true,
-            }
-          }
-          return {
-            ...itm,
-            act: false
-          }
-        }))
-      if (sliderCount === 4) {
-        setSliderCount(1)
-      }
-    }, time)
-  }
-  autoSlider()
+  // const autoSlider = () => {
+  //   setInterval(() => {
+  //     setSliderCount(sliderCount + 1)
+  //     setSliderImg(
+  //       sliderImg.map((itm, i) => {
+  //         if (id === itm.id) {
+  //           return {
+  //             ...itm,
+  //             act: true,
+  //           }
+  //         }
+  //         return {
+  //           ...itm,
+  //           act: false
+  //         }
+  //       }))
+  //     if (sliderCount === 4) {
+  //       setSliderCount(1)
+  //     }
+  //   }, time)
+  // }
+  // autoSlider()
 
 
   return (

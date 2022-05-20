@@ -120,6 +120,12 @@ const categorObj = [
 function Companents() {
   const [newCategorArr, setNewCategorArr] = useState([])
 
+  useEffect(() => {
+    return () => {
+      setNewCategorArr(categorObj)
+    };
+  }, []);
+
   return (
     <>
       <section className='header-hero'>
