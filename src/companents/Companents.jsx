@@ -118,12 +118,11 @@ const categorObj = [
 ]
 
 function Companents() {
-
   const [newCategorArr, setNewCategorArr] = useState([])
 
   useEffect(() => {
     return () => {
-      setNewCategorArr([...categorObj])
+      setNewCategorArr(categorObj)
     };
   }, []);
 
