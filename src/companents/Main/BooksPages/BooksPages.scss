@@ -1,0 +1,382 @@
+.bookpages {
+  width: 100%;
+  height: 100%;
+  background: #191919;
+}
+
+.book__inner {
+  width: 100%;
+  margin-left: -20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.book__img_desc_box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.book__img_box {
+  width: 45%;
+  padding-right: 45px;
+}
+
+.book__img {
+  width: 520px;
+  height: 810px;
+  object-fit: cover;
+}
+
+.book__desc_box {
+  width: 55%;
+}
+
+.book__name {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 53px;
+  color: #c9ac8c;
+  padding: 10px;
+}
+
+.book__username {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+  color: #c9ac8c;
+  padding-left: 10px;
+  margin-bottom: 20px;
+
+  & span {
+    font-family: "Visuelt Pro";
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 144.4%;
+    color: rgba(255, 255, 255, 0.6);
+
+    & i {
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+}
+
+.book__desc_list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.book__desc_item {
+  padding: 10px;
+}
+
+.bookitem__tit {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+
+  & span {
+    color: #fff;
+  }
+}
+
+.book__desc_line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+  padding-left: 10px;
+
+  & p {
+    font-family: "Steinbeck";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #c9ac8c;
+
+    & i {
+      color: #fff;
+    }
+  }
+
+  & span {
+    width: 80%;
+    border: 1px solid rgba(201, 172, 140, 0.6);
+  }
+}
+
+.book__desc {
+  padding: 10px;
+  margin-bottom: 25px;
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 144.4%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.book__desc_add_box {
+  padding-left: 10px;
+}
+
+.book__add_tit {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #c9ac8c;
+  margin-bottom: 28px;
+}
+
+.book__add-btn_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book__audio_elektron {
+  display: flex;
+  align-items: center;
+  margin-left: -13px;
+  margin-right: -13px;
+}
+
+.book__book_btn {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+  color: #fff;
+  border: none;
+  background: transparent;
+  margin: 0 13px;
+
+  & span {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  & i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  &:hover span {
+    color: #c9ac8c;
+  }
+  &:hover i {
+    color: #c9ac8c;
+  }
+  &:hover {
+    color: #c9ac8c;
+  }
+}
+
+.book__add_btn {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 16px;
+  color: #3c2710;
+  background: #c9ac8c;
+  padding: 16px 32px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #3c2710;
+    color: #c9ac8c;
+  }
+}
+
+.book__content {
+  width: 100%;
+}
+
+.bcon__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-left: -35px;
+  margin-right: -35px;
+  margin-bottom: 40px;
+}
+
+.bcon__item {
+  margin: 0 25px;
+}
+
+.bcon__link {
+  font-family: "Steinbeck";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  padding: 10px;
+
+  &:hover {
+    color: #c9ac8c;
+  }
+}
+
+.bcon__link-act {
+  color: #c9ac8c;
+}
+
+.bcon__desc {
+  width: 100%;
+  margin-bottom: 80px;
+  // overflow: hidden;
+}
+
+.bcondesc__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  margin-left: -23px;
+  margin-right: -23px;
+  padding-top: 20px;
+}
+
+.bcondesc__item {
+  position: relative;
+  min-width: 710px;
+  background-image: url("../../../assets/Images/item-bg-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 46px 100px 46px 40px;
+  margin: 0 23px;
+}
+
+.bcondesc__icon {
+  position: absolute;
+  top: -15px;
+  left: 40px;
+  font-family: "Love";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  color: #c9ac8c;
+}
+
+.bcondesc__text {
+  font-family: "Steinbeck";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.bcondesc__btn_box {
+  width: 80px;
+  margin-left: auto;
+  margin-right: -70px;
+  margin-bottom: -20px;
+}
+
+.bcondesc__btn {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 25px;
+  margin: 0 5px;
+  transition: all 0.2s ease;
+
+  &:hover i {
+    color: #c9ac8c;
+  }
+}
+
+.book__menus {
+  width: 100%;
+}
+
+.bmenu__tit_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 65px;
+}
+
+.bmenu__title,
+.bmenu__btn {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+  color: #c9ac8c;
+}
+
+.bmenu__btn {
+  color: #fff;
+  background: transparent;
+  border: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #c9ac8c;
+  }
+}
+
+.bmenu__list_box {
+  width: 100%;
+}
+
+.bmenu__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  margin-left: -20px;
+  margin-right: -20px;
+  overflow-x: scroll;
+}
+
+.bmenu__item {
+  width: 165px;
+  height: auto;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.usbook__item_img {
+  width: 165px;
+  height: 245px;
+  object-fit: cover;
+  margin-bottom: 17px;
+  border-radius: 15px;
+}
+
+.usbook__name {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  color: #c9ac8c;
+}
+
+.usbook__comment {
+  font-family: "Visuelt Pro";
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 144.4%;
+  color: rgba(255, 255, 255, 0.6);
+
+  & i {
+    color: #fff;
+    margin-right: 5px;
+  }
+}

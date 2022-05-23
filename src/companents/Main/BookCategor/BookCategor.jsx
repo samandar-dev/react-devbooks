@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import Card from './Card/Card'
-import './_categories.scss'
+import BookCards from './BookCards/BookCards'
 
-function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
+function BookCategor({ bookObj, setNewBookArr, newBookArr }) {
   const [categorItems, setCategorItems] = useState([
     {
       id: 1,
@@ -47,20 +46,19 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
 
     switch (e.target.textContent) {
       case 'Temuriylar davri':
-        setNewCategorArr(categorObj.filter(itm => itm.categor === e.target.textContent))
+        setNewBookArr(bookObj.filter(itm => itm.categor === e.target.textContent))
         break;
       case 'Sovet davri':
-        setNewCategorArr(categorObj.filter(itm => itm.categor === e.target.textContent))
+        setNewBookArr(bookObj.filter(itm => itm.categor === e.target.textContent))
         break;
       case 'Mustaqillik davri':
-        setNewCategorArr(categorObj.filter(itm => itm.categor === e.target.textContent))
+        setNewBookArr(bookObj.filter(itm => itm.categor === e.target.textContent))
         break;
       default:
-        setNewCategorArr(categorObj)
+        setNewBookArr(bookObj)
         break;
     }
   }
-
   return (
     <>
       <section className='main__categor categor'>
@@ -81,8 +79,8 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
               </ul>
             </div>
 
-            <div className="categor__menus catmenus">
-              <Card categorObj={categorObj} newCategorArr={newCategorArr} setNewCategorArr={setNewCategorArr} />
+            <div className="categor__menus bmenus">
+              <BookCards bookObj={bookObj} newBookArr={newBookArr} setNewBookArr={setNewBookArr} />
             </div>
           </div>
         </div>
@@ -91,4 +89,4 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
   )
 }
 
-export default Categories
+export default BookCategor

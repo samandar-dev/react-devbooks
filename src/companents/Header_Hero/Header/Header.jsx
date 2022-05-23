@@ -3,7 +3,7 @@ import HeaderImg from '../../../assets/Images/header-img.png'
 import Navbar from './Navbar/Navbar'
 import './_header.scss'
 
-function Header() {
+function Header({ navbarItem, navbarFunc }) {
   return (
     <>
       <header className='header'>
@@ -12,7 +12,7 @@ function Header() {
             <h1 className='header__title'>Badiiyat</h1>
 
             <nav className='header__nav nav'>
-              <Navbar />
+              <Navbar navbarItem={navbarItem} navbarFunc={navbarFunc} />
             </nav>
 
             <div className="header__categor hecate">

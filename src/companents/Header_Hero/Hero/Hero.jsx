@@ -33,12 +33,13 @@ function Hero() {
   const [id, setid] = useState(1)
 
   const sliderFunc = (e) => {
+    let id = Math.floor(e.target.id)
     setid(Math.floor(e.target.id))
     setTime(3000)
 
     setSliderImg(
       sliderImg.map((itm, i) => {
-        if (id === itm.id) {
+        if (id == itm.id) {
           setSliderCount(itm.id)
           return {
             ...itm,
@@ -51,30 +52,6 @@ function Hero() {
         }
       }))
   }
-
-  // const autoSlider = () => {
-  //   setInterval(() => {
-  //     setSliderCount(sliderCount + 1)
-  //     setSliderImg(
-  //       sliderImg.map((itm, i) => {
-  //         if (id === itm.id) {
-  //           return {
-  //             ...itm,
-  //             act: true,
-  //           }
-  //         }
-  //         return {
-  //           ...itm,
-  //           act: false
-  //         }
-  //       }))
-  //     if (sliderCount === 4) {
-  //       setSliderCount(1)
-  //     }
-  //   }, time)
-  // }
-  // autoSlider()
-
 
   return (
     <>

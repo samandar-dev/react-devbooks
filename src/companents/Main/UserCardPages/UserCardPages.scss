@@ -1,0 +1,193 @@
+.userpages {
+  // position: fixed;
+  width: 100%;
+  height: 100%;
+  // top: 0;
+  // left: 0;
+  background: #191919;
+  // z-index: 200;
+}
+
+.uspag__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.uspag__left {
+  width: 50%;
+  padding-right: 90px;
+}
+
+.uslef__img_box {
+  max-width: 585px;
+  height: 770px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.uslef__img {
+  width: 590px;
+  height: 780px;
+  border-radius: 0px 50px 50px 0px;
+}
+
+.uslef__name_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usleft__span {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 39px;
+  color: #c9ac8c;
+  margin: 0 30px;
+}
+
+.usname__tit {
+  font-family: "Visuelt Pro";
+  font-weight: 300;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.usname__year {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 39px;
+  color: #c9ac8c;
+}
+
+.uspag__right {
+  width: 50%;
+  height: 100%;
+  padding-top: 45px;
+}
+
+.usrig__name {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 53px;
+  color: #c9ac8c;
+  margin-bottom: 10px;
+}
+
+.usrig__desc {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 144.4%;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.uscon__title {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 22px;
+  color: #c9ac8c;
+  margin-bottom: 5px;
+
+  & i {
+    font-size: 22px;
+    color: #c9ac8c;
+    margin-right: 10px;
+  }
+}
+
+.uscon__desc {
+  max-width: 365px;
+  font-family: "Steinbeck";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 154.9%;
+  color: #fff;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+
+.usbook__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.usbook__title {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 34px;
+  color: #c9ac8c;
+}
+
+.usbook__btn {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+  color: #fff;
+  border: none;
+  background: transparent;
+}
+
+.usbook__list_box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.usbook__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  margin-left: -20px;
+  margin-right: -20px;
+  overflow-x: scroll;
+}
+
+.usbook__item {
+  width: 165px;
+  height: auto;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.usbook__item_img {
+  width: 165px;
+  height: 245px;
+  object-fit: cover;
+  margin-bottom: 17px;
+  border-radius: 15px;
+}
+
+.usbook__name {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  color: #c9ac8c;
+}
+
+.usbook__comment {
+  font-family: "Visuelt Pro";
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 144.4%;
+  color: rgba(255, 255, 255, 0.6);
+
+  & i {
+    color: #fff;
+    margin-right: 5px;
+  }
+}
