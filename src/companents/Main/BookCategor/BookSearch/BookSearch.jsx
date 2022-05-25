@@ -1,13 +1,15 @@
 import React from 'react'
 import '../../Search/_search.scss'
 
-function BookSearch({ bookObj, setNewBookArr }) {
+function BookSearch({ object, setNewBookArr }) {
   let arr = []
   const searchFunc = (e) => {
-    bookObj.forEach(itm => {
-      if (itm.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())) {
-        arr.push(itm)
-      }
+    object.forEach(itm => {
+      itm.bookObj.map(book => {
+        if (book.bookName.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())) {
+          arr.push(itm)
+        }
+      })
     })
     setNewBookArr(arr)
   }

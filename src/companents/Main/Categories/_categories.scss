@@ -84,6 +84,12 @@
   cursor: pointer;
 }
 
+.catmenus__img {
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+}
+
 .catmenus__name {
   width: 170px;
   font-family: "Steinbeck";

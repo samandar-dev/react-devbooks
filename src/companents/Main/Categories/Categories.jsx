@@ -6,21 +6,26 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
   const [categorItems, setCategorItems] = useState([
     {
       id: 1,
-      name: 'Temuriylar davri',
-      act: false,
-    },
-    {
-      id: 2,
-      name: 'Jadid adabiyoti',
+      name: 'Barchasi',
       act: true,
     },
     {
+      id: 2,
+      name: 'Jahon adabiyoti',
+      act: false,
+    },
+    {
       id: 3,
-      name: 'Sovet davri',
+      name: 'Diniy',
       act: false,
     },
     {
       id: 4,
+      name: 'Biznes',
+      act: false,
+    },
+    {
+      id: 5,
       name: 'Mustaqillik davri',
       act: false,
     },
@@ -46,14 +51,17 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
       }))
 
     switch (e.target.textContent) {
-      case 'Temuriylar davri':
-        setNewCategorArr(categorObj.filter(itm => itm.categor === e.target.textContent))
+      case 'Jahon adabiyoti':
+        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'jahon'))
         break;
-      case 'Sovet davri':
-        setNewCategorArr(categorObj.filter(itm => itm.categor === e.target.textContent))
+      case 'Diniy':
+        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       case 'Mustaqillik davri':
-        setNewCategorArr(categorObj.filter(itm => itm.categor === e.target.textContent))
+        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'uzbek'))
+        break;
+      case 'Biznes':
+        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       default:
         setNewCategorArr(categorObj)

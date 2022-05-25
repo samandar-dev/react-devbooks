@@ -1,0 +1,17 @@
+.items {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: red;
+  z-index: 100;
+}
+
+.items img {
+  width: 600px;
+  height: 600px;
+}
+
+.items p {
+  font-size: 30px;
+}
+/*# sourceMappingURL=card.css.map */

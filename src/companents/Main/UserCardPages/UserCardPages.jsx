@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import Object from '../../Object'
+import Object from '../../../Object'
 import './UserCardPages.scss';
 
 function UserCardPages() {
@@ -19,25 +19,23 @@ function UserCardPages() {
                   <div className="uslef__name_box usname">
                     <div className="usleft__left">
                       <p className="usname__tit">Tavallud sanasi</p>
-                      <p className="usname__year">5-Avg 1941</p>
+                      <p className="usname__year">{itm.bornDate}-{itm.bornMonth} {itm.born}</p>
                       <p className='usname__tit'>Toshkent, Uzbekistan</p>
                     </div>
                     <span className='usleft__span'>--</span>
                     <div className="usleft__right">
                       <p className="usname__tit">Tavallud sanasi</p>
-                      <p className="usname__year">24-MAY 2013</p>
+                      <p className="usname__year">{itm.diedDate}-{itm.diedMonth} {itm.died}</p>
                       <p className='usname__tit'>Toshkent, Uzbekistan</p>
                     </div>
                   </div>
                 </div>
                 <div className="uspag__right usrig">
-                  <h3 className="usrig__name">{itm.name}</h3>
+                  <h3 className="usrig__name">{itm.name} {itm.lastName}</h3>
                   <p className="usrig__desc">{itm.desc}</p>
                   <div className="usrig__content uscon">
                     <h4 className="uscon__title"><i class='bx bxs-bookmark-star'></i>Ijodi</h4>
-                    <p className="uscon__desc">
-                      Yozuvchining ilk asari 1962-yilda „Poʻlat chavandoz“ nomida ocherklar toʻplami tarzida nashrdan chiqdi. Ammo yozuvchiga muvaffaqiyat keltirgan asar 1970-yilda nashr qilingan „Bahor qaytmaydi“ qissasi boʻldi.
-                    </p>
+                    <p className="uscon__desc">{itm.jobs}</p>
                   </div>
 
                   <div className="usrig__books usbook">
@@ -47,11 +45,11 @@ function UserCardPages() {
                     </div>
                     <div className="usbook__list_box">
                       <ul className="usbook__list">
-                        {itm.userbooks.map((el, i) => (
-                          <Link to={`/BooksPages/${i + 1}`} key={i + 1} className="catmenus__link">
+                        {itm.bookObj.map((el, i) => (
+                          <Link to={`/BooksPages/${el.bookId}`} key={i + 1} className="catmenus__link">
                             <li className="usbook__item" key={i + 1}>
-                              <img className='usbook__item_img' src={el[0]} alt="user books" />
-                              <p className='usbook__name'>{el[1]}</p>
+                              <img className='usbook__item_img' src={el.bookImg} alt="user books" />
+                              <p className='usbook__name'>{el.bookName}</p>
                               <p className='usbook__comment'><i className='bx bxs-star'></i>4.4 • 5200 ta fikrlar</p>
                             </li>
                           </Link>

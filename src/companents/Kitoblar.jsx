@@ -13,11 +13,11 @@ function Kitoblar({ bookObj, object, setNewBookArr, newBookArr, navbarItem, navb
       />
       <Hero />
       <BookSearch
-        bookObj={bookObj}
+        object={object}
         setNewBookArr={setNewBookArr}
       />
       <BookCategor
-        bookObj={bookObj}
+        object={object}
         newBookArr={newBookArr}
         setNewBookArr={setNewBookArr}
       />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import BoshSahifa from './companents/BoshSahifa';
-import Object from './companents/Object'
+import Object from './Object'
 import BookObj from './companents/BookObject'
 import Kitoblar from './companents/Kitoblar';
 import UserItems from './companents/UserItems';
@@ -42,9 +42,8 @@ function App() {
 
   useEffect(() => {
     setNewCategorArr(Object)
-    setNewBookArr(BookObj)
+    setNewBookArr(Object)
   }, []);
-
 
   const navbarFunc = (e) => {
     let num = Math.floor(e.target.id)

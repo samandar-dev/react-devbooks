@@ -1,25 +1,30 @@
 import React, { useState } from 'react'
 import BookCards from './BookCards/BookCards'
 
-function BookCategor({ bookObj, setNewBookArr, newBookArr }) {
+function BookCategor({ object, setNewBookArr, newBookArr }) {
   const [categorItems, setCategorItems] = useState([
     {
       id: 1,
-      name: 'Temuriylar davri',
-      act: false,
-    },
-    {
-      id: 2,
-      name: 'Jadid adabiyoti',
+      name: 'Barchasi',
       act: true,
     },
     {
+      id: 2,
+      name: 'Jahon adabiyoti',
+      act: false,
+    },
+    {
       id: 3,
-      name: 'Sovet davri',
+      name: 'Diniy',
       act: false,
     },
     {
       id: 4,
+      name: 'Biznes',
+      act: false,
+    },
+    {
+      id: 5,
       name: 'Mustaqillik davri',
       act: false,
     },
@@ -45,17 +50,20 @@ function BookCategor({ bookObj, setNewBookArr, newBookArr }) {
       }))
 
     switch (e.target.textContent) {
-      case 'Temuriylar davri':
-        setNewBookArr(bookObj.filter(itm => itm.categor === e.target.textContent))
+      case 'Jahon adabiyoti':
+        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === 'jahon'))
         break;
-      case 'Sovet davri':
-        setNewBookArr(bookObj.filter(itm => itm.categor === e.target.textContent))
+      case 'Diniy':
+        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       case 'Mustaqillik davri':
-        setNewBookArr(bookObj.filter(itm => itm.categor === e.target.textContent))
+        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === 'uzbek'))
+        break;
+      case 'Biznes':
+        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       default:
-        setNewBookArr(bookObj)
+        setNewBookArr(object)
         break;
     }
   }
@@ -80,7 +88,7 @@ function BookCategor({ bookObj, setNewBookArr, newBookArr }) {
             </div>
 
             <div className="categor__menus bmenus">
-              <BookCards bookObj={bookObj} newBookArr={newBookArr} setNewBookArr={setNewBookArr} />
+              <BookCards object={object} newBookArr={newBookArr} setNewBookArr={setNewBookArr} />
             </div>
           </div>
         </div>

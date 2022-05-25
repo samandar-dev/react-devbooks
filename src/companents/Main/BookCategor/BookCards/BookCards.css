@@ -1,0 +1,61 @@
+.bmenus__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.bmenus__item {
+  width: 165px;
+  height: auto;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.bmenus__img {
+  width: 165px;
+  height: 245px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 17px;
+  border-radius: 15px;
+}
+
+.bmenus__name {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  color: #c9ac8c;
+}
+
+.bmenus__author {
+  font-family: "Visuelt Pro";
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 144.4%;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bmenus__comment {
+  font-family: "Visuelt Pro";
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 144.4%;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bmenus__comment i {
+  color: #fff;
+  margin-right: 5px;
+}
+/*# sourceMappingURL=BookCards.css.map */
