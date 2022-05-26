@@ -4,7 +4,7 @@ import Hero from './Header_Hero/Hero/Hero'
 import BookCategor from './Main/BookCategor/BookCategor'
 import BookSearch from './Main/BookCategor/BookSearch/BookSearch'
 
-function Kitoblar({ bookObj, object, setNewBookArr, newBookArr, navbarItem, navbarFunc }) {
+function Kitoblar({ bookObj, newCategorArr, object, setNewBookArr, setNewCategorArr, newBookArr, navbarItem, navbarFunc }) {
   return (
     <>
       <Header
@@ -20,6 +20,8 @@ function Kitoblar({ bookObj, object, setNewBookArr, newBookArr, navbarItem, navb
         object={object}
         newBookArr={newBookArr}
         setNewBookArr={setNewBookArr}
+        setNewCategorArr={setNewCategorArr}
+        newCategorArr={newCategorArr}
       />
     </>
   )

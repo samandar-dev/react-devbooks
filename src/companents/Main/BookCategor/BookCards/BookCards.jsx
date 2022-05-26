@@ -2,11 +2,11 @@ import React from 'react'
 import './BookCards.scss'
 import { Link } from 'react-router-dom'
 
-function BookCards({ newBookArr }) {
+function BookCards({ newCategorArr }) {
   return (
     <>
       <ul className="bmenus__list">
-        {newBookArr.map((obj, i) => (
+        {newCategorArr.map((obj, i) => (
           obj.bookObj.map((book, inx) => (
             <Link Link to={`/BooksPages/${book.bookId}`} key={inx + 1} className="catmenus__link">
               <li className='bmenus__item' >

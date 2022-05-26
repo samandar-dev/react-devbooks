@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import Pagnition from '../Pagnition/Pagnition'
+import SiginIn from '../SiginIn/SiginIn'
 import Card from './Card/Card'
 import './_categories.scss'
 
@@ -90,8 +93,13 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
             </div>
 
             <div className="categor__menus catmenus">
-              <Card categorObj={categorObj} newCategorArr={newCategorArr} setNewCategorArr={setNewCategorArr} />
+              <Card
+                categorObj={categorObj}
+                newCategorArr={newCategorArr}
+                setNewCategorArr={setNewCategorArr}
+              />
             </div>
+            <Pagnition />
           </div>
         </div>
       </section>

@@ -1,0 +1,203 @@
+.port {
+  width: 100%;
+  padding-top: 20px;
+  margin-bottom: 100px;
+}
+
+.port__hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: 0px 4px 73px rgba(0, 0, 0, 0.25);
+  background: radial-gradient(85.43% 1678.66% at 98.07% 50%, #2f2f2f 0%, #171717 100%);
+}
+
+.phero__desc {
+  display: flex;
+  align-items: center;
+  padding-left: 95px;
+}
+
+.port__hero_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phdesc__img_box {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  margin-right: 35px;
+  text-align: center;
+}
+
+.phdesc__star {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+  background: #1a1a1a;
+  border: 2px solid #c9ac8c;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 10px;
+
+  & i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    line-height: 20px;
+    color: #c9ac8c;
+  }
+}
+
+.phdesc__name {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 144.4%;
+  color: #c9ac8c;
+  margin-bottom: 10px;
+}
+
+.phdesc__bio {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.phdesc__bio_item {
+  margin-bottom: 6px;
+}
+
+.phdesc__bio_tit {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 144.4%;
+  color: #fff;
+
+  & span {
+    opacity: 0.5;
+  }
+}
+
+.phdesc__user_tit {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 144.4%;
+  color: #c9ac8c;
+}
+
+.phdesc__user_countbook {
+  font-family: "Steinbeck";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 144.4%;
+  color: #fff;
+}
+
+.port__main {
+  width: 100%;
+  display: flex;
+  padding-top: 20px;
+}
+
+.pmain__left {
+  width: 28%;
+  height: 500px;
+  border: 1px solid rgb(202, 192, 192);
+}
+
+.pmain__right {
+  width: 72%;
+  height: 500px;
+}
+
+.pmain-right__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -25px;
+  margin-right: -25px;
+  margin-bottom: 40px;
+}
+
+.pmain-right__item {
+  margin: 0 25px;
+}
+
+.pmain-right__tit {
+  font-family: "Steinbeck";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  border: none;
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+
+.catbtns__btn-act {
+  color: #c9ac8c;
+}
+
+.pmain__books_list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.pmain__books_item {
+  width: 165px;
+  height: auto;
+  margin: 0 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.pmain__books_img {
+  width: 165px;
+  height: 245px;
+  object-fit: cover;
+  margin-bottom: 17px;
+  border-radius: 15px;
+}
+
+.pmain__books__name {
+  font-family: "Rotterburg Stylish FREE";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  color: #c9ac8c;
+}
+
+.pmain__books__comment {
+  font-family: "Visuelt Pro";
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 144.4%;
+  color: rgba(255, 255, 255, 0.6);
+
+  & i {
+    color: #fff;
+    margin-right: 5px;
+  }
+}

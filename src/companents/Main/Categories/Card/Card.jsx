@@ -2,10 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Card({ newCategorArr }) {
+  let count = 0;
+  let items;
   return (
     <>
       <ul className="catmenus__list">
         {newCategorArr.map((obj, i) => (
+          // count++
+          // if (count <= 12) {
+          //   items =
           <Link to={`UserCardPages/${obj.id}`} key={i + 1} className="catmenus__link">
             <li className='catmenus__item' >
               <img className='catmenus__img' src={obj.img} alt="img" />
@@ -19,6 +24,8 @@ function Card({ newCategorArr }) {
               </div>
             </li>
           </Link>
+          // return items
+          // }
         ))}
       </ul>
     </>

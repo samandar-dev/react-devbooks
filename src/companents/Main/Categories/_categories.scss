@@ -150,3 +150,17 @@
 .catmenus__link {
   text-decoration: none;
 }
+
+.pagnition {
+  color: #fff !important;
+  background-color: rgb(116, 102, 82) !important;
+  text-align: center;
+  width: 420px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 10px;
+
+  & button {
+    color: #fff;
+  }
+}

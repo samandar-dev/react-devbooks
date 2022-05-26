@@ -1,5 +1,6 @@
 import React from 'react'
-import HeaderImg from '../../../assets/Images/header-img.png'
+import { Link } from 'react-router-dom'
+import DropDoun from './DropDoun/DropDoun'
 import Navbar from './Navbar/Navbar'
 import './_header.scss'
 
@@ -9,15 +10,16 @@ function Header({ navbarItem, navbarFunc }) {
       <header className='header'>
         <div className="container">
           <div className="header__inner">
-            <h1 className='header__title'>Badiiyat</h1>
+            <Link to={'/'} className='titleLink'>
+              <h1 className='header__title'>Badiiyat</h1>
+            </Link>
 
             <nav className='header__nav nav'>
               <Navbar navbarItem={navbarItem} navbarFunc={navbarFunc} />
             </nav>
 
             <div className="header__categor hecate">
-              <img src={HeaderImg} alt="img" />
-              <button className='hecate__btn'><i className='bx bx-chevron-down'></i></button>
+              <DropDoun />
             </div>
           </div>
         </div>

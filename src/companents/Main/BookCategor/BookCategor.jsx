@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BookCards from './BookCards/BookCards'
 
-function BookCategor({ object, setNewBookArr, newBookArr }) {
+function BookCategor({ object, setNewBookArr, newBookArr, newCategorArr, setNewCategorArr }) {
   const [categorItems, setCategorItems] = useState([
     {
       id: 1,
@@ -49,21 +49,67 @@ function BookCategor({ object, setNewBookArr, newBookArr }) {
         }
       }))
 
+    // switch (e.target.textContent) {
+    //   case 'Jahon adabiyoti':
+    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === 'jahon'))
+    //     break;
+    //   case 'Diniy':
+    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
+    //     break;
+    //   case 'Mustaqillik davri':
+    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === 'uzbek'))
+    //     break;
+    //   case 'Biznes':
+    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
+    //     break;
+    //   default:
+    //     setNewBookArr(object)
+    //     break;
+    // }
+
     switch (e.target.textContent) {
       case 'Jahon adabiyoti':
-        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === 'jahon'))
+        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === 'jahon')
+          // console.log(newCategorArr);
+          // console.log(itm);
+          // return obj
+
+          // })
+          // return obj
+        ))
         break;
       case 'Diniy':
-        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
+        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase())
+          // console.log(itm);
+          // console.log(newCategorArr);
+          // return obj
+
+          // })
+          // return obj
+        ))
         break;
       case 'Mustaqillik davri':
-        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === 'uzbek'))
+        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === 'uzbek')
+          // console.log(itm);
+          // console.log(newCategorArr);
+          // return obj
+
+          // })
+          // return obj
+        ))
         break;
       case 'Biznes':
-        setNewBookArr(object.bookObj.filter(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
+        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase())
+          // console.log(itm);
+          // console.log(newCategorArr);
+          // return obj
+
+          // })
+          // return obj
+        ))
         break;
       default:
-        setNewBookArr(object)
+        setNewCategorArr(object)
         break;
     }
   }
@@ -88,7 +134,7 @@ function BookCategor({ object, setNewBookArr, newBookArr }) {
             </div>
 
             <div className="categor__menus bmenus">
-              <BookCards object={object} newBookArr={newBookArr} setNewBookArr={setNewBookArr} />
+              <BookCards object={object} newCategorArr={newCategorArr} setNewBookArr={setNewBookArr} />
             </div>
           </div>
         </div>
