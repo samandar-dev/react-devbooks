@@ -16,6 +16,7 @@ function SiginUp({ userObj, setUserObj, setFnameVal, setLnameVal, setPhoneeVal, 
 
   const addUserObj = (e) => {
     console.log(submit);
+    setSubmit(true)
     if (e.target.id === 'firstName') {
       if (e.target.value.length > 2) {
         setFnameVal(e.target.value)
@@ -56,7 +57,6 @@ function SiginUp({ userObj, setUserObj, setFnameVal, setLnameVal, setPhoneeVal, 
       if (e.target.value.length >= 8) {
         setPasswordVal(e.target.value)
         setPasswordd(true)
-        // submit(true)
       }
       else {
         setPasswordd(false)
@@ -78,7 +78,7 @@ function SiginUp({ userObj, setUserObj, setFnameVal, setLnameVal, setPhoneeVal, 
               <h2 className="sigup__title">Sigin up</h2>
               <p className='sigup__links'>Already have an account? <Link to={"/SiginIn"}>Sign in</Link></p>
 
-              <form className='sigin__form'>
+              <form className='sigin__form' >
                 <input
                   className={`sigin__form_inp ${fname ? "" : "inpBorder"}`}
                   type="text" name="text" id="firstName"
@@ -119,7 +119,7 @@ function SiginUp({ userObj, setUserObj, setFnameVal, setLnameVal, setPhoneeVal, 
                   required
                 />
                 <p className={`sigin__form_eror-tit ${passwordd ? "errorNone" : "errorBlock"}`}>password length should not be less than 8</p>
-                {fname && lname && emaill && phonee && passwordd ?
+                {submit ?
                   <Link to={'/BoshSahifa'}><button className='sigin__form_btn' onSubmit={submitFunc}>Next step</button></Link> :
                   <button className='sigin__form_btn'>Next step</button>}
               </form>
