@@ -62,12 +62,15 @@
 .catmenus__list {
   margin: 0;
   padding: 0;
+  // width: 100%;
+  min-height: 370px;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-left: -21px;
   margin-right: -21px;
+  margin-bottom: 50px;
 }
 
 .catmenus__item {
@@ -151,16 +154,29 @@
   text-decoration: none;
 }
 
-.pagnition {
-  color: #fff !important;
-  background-color: rgb(116, 102, 82) !important;
-  text-align: center;
-  width: 420px;
+.btns__box {
   margin: 0 auto;
-  margin-top: 50px;
-  border-radius: 10px;
+  text-align: center;
+}
 
-  & button {
+.pag__btns {
+  font-weight: 500;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background: $primary-gold;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  margin: 0 5px;
+
+  &:hover {
     color: #fff;
+    background: rgb(193, 120, 64);
+    border: 1px solid #fff;
+  }
+
+  &:focus {
+    color: #fff;
+    background: rgb(193, 120, 64);
+    border: 1px solid #fff;
   }
 }

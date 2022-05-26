@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Profil.scss'
 
-function Profil({ saveObj, object, setNewCategorArr, newCategorArr }) {
+function Profil({ fnameVal, lnameVal, saveObjId, saveObj }) {
   const [categorItems, setCategorItems] = useState([
     {
       id: 1,
@@ -28,7 +29,6 @@ function Profil({ saveObj, object, setNewCategorArr, newCategorArr }) {
 
   const categorFunc = (e) => {
     let num = Math.floor(e.target.id)
-
     setCategorItems(
       categorItems.map((itm, i) => {
         if (num === itm.id) {
@@ -43,25 +43,11 @@ function Profil({ saveObj, object, setNewCategorArr, newCategorArr }) {
           act: false
         }
       }))
-
-    // switch (e.target.textContent) {
-    //   case 'Jahon adabiyoti':
-    //     setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'jahon'))
-    //     break;
-    //   case 'Diniy':
-    //     setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
-    //     break;
-    //   case 'Mustaqillik davri':
-    //     setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'uzbek'))
-    //     break;
-    //   case 'Biznes':
-    //     setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
-    //     break;
-    //   default:
-    //     setNewCategorArr(categorObj)
-    //     break;
-    // }
   }
+
+  let obj;
+
+  console.log("qqqqqqqqqqqq", saveObj);
 
   return (
     <>
@@ -80,7 +66,8 @@ function Profil({ saveObj, object, setNewCategorArr, newCategorArr }) {
                 </div>
 
                 <div className="phdesc__name">
-                  <h3 className="phdesc__name">Farruxbek Abdullayev</h3>
+
+                  <h3 className="phdesc__name" >{fnameVal} {lnameVal}</h3>
 
                   <ul className='phdesc__bio'>
                     <li className="phdesc__bio_item">
@@ -101,9 +88,8 @@ function Profil({ saveObj, object, setNewCategorArr, newCategorArr }) {
             </div>
 
             <div className="port__main pmain">
-              <div className="pmain__left col-4">
+              <div className="pmain__left col-4"></div>
 
-              </div>
               <div className="pmain__right col-8">
                 <div className="pmain__right_topmenu">
                   <ul className="pmain-right__list">
@@ -119,15 +105,17 @@ function Profil({ saveObj, object, setNewCategorArr, newCategorArr }) {
 
                 <div className="pmain__right_books">
                   <ul className='pmain__books_list'>
-                    {/* {saveObj.map(obj => (
-                      obj.bookObj.map((itm, i) => (
-                        <li className="pmain__books_item" key={i + 1}>
-                          <img className='pmain__books_img' src={itm.bookImg} alt="user books" />
-                          <p className='pmain__books__name'>{itm.bookName}</p>
-                          <p className='pmain__books__comment'><i className='bx bxs-star'></i>4.4 • 5200 ta fikrlar</p>
-                        </li>
-                      ))
-                    ))} */}
+                    {saveObjId.map(idd => (
+                      saveObj.map(obj => (
+                        obj.bookObj.map((itm, i) => (
+                          idd == itm.bookId ?
+                            <Link to={`/BooksPages/${itm.bookId}`} className='link'>
+                              <li className="pmain__books_item" key={i + 1}>
+                                <img className='pmain__books_img' src={itm.bookImg} alt="user books" />
+                                <p className='pmain__books__name'>{itm.bookName}</p>
+                                <p className='pmain__books__comment'><i className='bx bxs-star'></i>4.4 • 5200 ta fikrlar</p>
+                              </li> </Link> : ""
+                        ))))))}
                   </ul>
                 </div>
               </div>

@@ -8,10 +8,10 @@ function Card({ newCategorArr }) {
     <>
       <ul className="catmenus__list">
         {newCategorArr.map((obj, i) => (
-          // count++
+          // count++  
           // if (count <= 12) {
           //   items =
-          <Link to={`UserCardPages/${obj.id}`} key={i + 1} className="catmenus__link">
+          <Link to={`/UserCardPages/${obj.id}`} key={i + 1} className="catmenus__link">
             <li className='catmenus__item' >
               <img className='catmenus__img' src={obj.img} alt="img" />
               <div className="catmenus__name_box">
@@ -28,6 +28,7 @@ function Card({ newCategorArr }) {
           // }
         ))}
       </ul>
+
     </>
   )
 }

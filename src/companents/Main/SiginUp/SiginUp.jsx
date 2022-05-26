@@ -1,25 +1,21 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './SiginUp.scss'
-let arr = []
 
-function SiginUp({ saveObj, setSaveObj }) {
+function SiginUp({ userObj, setUserObj, setFnameVal, setLnameVal, setPhoneeVal, setEmaillVal, setPasswordVal }) {
   const [fname, setFname] = useState(true)
   const [lname, setLname] = useState(true)
   const [phonee, setPhonee] = useState(true)
   const [emaill, setEmaill] = useState(true)
   const [passwordd, setPasswordd] = useState(true)
-  const [idd, setIdd] = useState(0)
+  const [submit, setSubmit] = useState(false)
 
-  const [fnameVal, setFnameVal] = useState('')
-  const [lnameVal, setLnameVal] = useState('')
-  const [phoneeVal, setPhoneeVal] = useState('')
-  const [emaillVal, setEmaillVal] = useState('')
-  const [passwordVal, setPasswordVal] = useState('')
-
-  // const [saveObj, setSaveObj] = useState([])
+  const submitFunc = (e) => {
+    e.preventDefault()
+  }
 
   const addUserObj = (e) => {
+    console.log(submit);
     if (e.target.id === 'firstName') {
       if (e.target.value.length > 2) {
         setFnameVal(e.target.value)
@@ -60,31 +56,12 @@ function SiginUp({ saveObj, setSaveObj }) {
       if (e.target.value.length >= 8) {
         setPasswordVal(e.target.value)
         setPasswordd(true)
+        // submit(true)
       }
       else {
         setPasswordd(false)
       }
     }
-  }
-
-  const submitFunc = (e) => {
-    e.preventDefault()
-    let id = setIdd(idd + 1)
-    let obj = {
-      id: id,
-      firstName: fnameVal,
-      lastName: lnameVal,
-      email: emaillVal,
-      phone: phoneeVal,
-      password: passwordVal,
-      date: '08',
-      month: "February",
-      year: 1999,
-    }
-    arr.push(obj)
-    setSaveObj([...arr])
-    console.log(arr);
-    // console.log(userObj);
   }
 
   return (
@@ -101,12 +78,13 @@ function SiginUp({ saveObj, setSaveObj }) {
               <h2 className="sigup__title">Sigin up</h2>
               <p className='sigup__links'>Already have an account? <Link to={"/SiginIn"}>Sign in</Link></p>
 
-              <form className='sigin__form' onSubmit={submitFunc}>
+              <form className='sigin__form'>
                 <input
                   className={`sigin__form_inp ${fname ? "" : "inpBorder"}`}
                   type="text" name="text" id="firstName"
                   placeholder='First name'
                   onChange={addUserObj}
+                  required
                 />
                 <p className={`sigin__form_eror-tit ${fname ? "errorNone" : "errorBlock"}`}>Length should be greater than 2</p>
                 <input
@@ -114,6 +92,7 @@ function SiginUp({ saveObj, setSaveObj }) {
                   type="text" name="text" id="lastName"
                   placeholder='Last name'
                   onChange={addUserObj}
+                  required
                 />
                 <p className={`sigin__form_eror-tit ${lname ? "errorNone" : "errorBlock"}`}>Length should be greater than 2</p>
                 <input
@@ -121,13 +100,15 @@ function SiginUp({ saveObj, setSaveObj }) {
                   type="number" name="text" id="number"
                   placeholder='Phone'
                   onChange={addUserObj}
+                  required
                 />
                 <p className={`sigin__form_eror-tit ${phonee ? "errorNone" : "errorBlock"}`}>The number is greater than 9</p>
                 <input
                   className='sigin__form_inp'
-                  type="email" name="text" id="email"
+                  type="text" name="text" id="email"
                   placeholder='Email'
                   onChange={addUserObj}
+                  required
                 />
                 <p className={`sigin__form_eror-tit ${emaill ? "errorNone" : "errorBlock"}`}>Length should be greater than 2</p>
                 <input
@@ -135,9 +116,12 @@ function SiginUp({ saveObj, setSaveObj }) {
                   type="text" name="text" id="password"
                   placeholder='Password'
                   onChange={addUserObj}
+                  required
                 />
                 <p className={`sigin__form_eror-tit ${passwordd ? "errorNone" : "errorBlock"}`}>password length should not be less than 8</p>
-                <button className='sigin__form_btn'>Next step</button>
+                {fname && lname && emaill && phonee && passwordd ?
+                  <Link to={'/BoshSahifa'}><button className='sigin__form_btn' onSubmit={submitFunc}>Next step</button></Link> :
+                  <button className='sigin__form_btn'>Next step</button>}
               </form>
             </div>
           </div>

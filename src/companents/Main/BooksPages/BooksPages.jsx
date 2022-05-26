@@ -3,9 +3,30 @@ import { Link, useLocation } from 'react-router-dom'
 import object from '../../../Object'
 import './BooksPages.scss'
 
-function BooksPages() {
+let arr = []
+let newArr = []
+function BooksPages({ setSaveObj, saveObj, setSaveObjId }) {
   let ulocation = useLocation()
   let count = 0;
+  let bookk, arrIdd;
+
+  const saveFunc = (e) => {
+    object.map((obj) => {
+      obj.bookObj.map((books) => {
+        if (books.bookId === e.target.id) {
+          newArr.push(e.target.id)
+          arr.push(obj)
+          bookk = arr.filter((elem, inex, obj) => obj.indexOf(elem) === inex)
+          arrIdd = newArr.filter((elem, inex, obj) => obj.indexOf(elem) === inex)
+          console.log("aaa", arr);
+          console.log("bbb", bookk);
+        }
+      })
+    })
+    setSaveObj([...bookk])
+    setSaveObjId([...arrIdd])
+  }
+
   return (
     <>
       {object.map((itm, i) => {
@@ -58,7 +79,7 @@ function BooksPages() {
                               <button className='book__book_btn'> <i className='bx bx-tab'></i><br />  Elektron <br /> <span>pdf, epub</span></button>
                             </div>
 
-                            <button className='book__add_btn'>Javonga qo’shish</button>
+                            <button className='book__add_btn' id={itmbook.bookId} onClick={saveFunc}>Javonga qo’shish</button>
                           </div>
                         </div>
                       </div>

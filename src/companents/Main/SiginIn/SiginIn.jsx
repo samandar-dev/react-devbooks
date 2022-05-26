@@ -17,10 +17,10 @@ function SiginIn() {
               <p className='sigup__links'>Do not you have an account? <Link to={"/SiginUp"}>Sign up</Link></p>
 
               <form className='sigin__form'>
-                <input className='sigin__form_inp' type="text" name="text" id="email" placeholder='Email' />
-                <input className='sigin__form_inp' type="text" name="text" id="password" placeholder='Password' />
+                <input className='sigin__form_inp' type="text" name="text" id="email" placeholder='Email' required />
+                <input className='sigin__form_inp' type="text" name="text" id="password" placeholder='Password' required />
 
-                <button className='sigin__form_btn'>Next step</button>
+                <Link to={'/BoshSahifa'}><button className='sigin__form_btn'>Next step</button></Link>
               </form>
             </div>
           </div>

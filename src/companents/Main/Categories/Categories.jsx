@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
-import Pagnition from '../Pagnition/Pagnition'
-import SiginIn from '../SiginIn/SiginIn'
 import Card from './Card/Card'
 import './_categories.scss'
 
@@ -14,7 +11,7 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
     },
     {
       id: 2,
-      name: 'Jahon adabiyoti',
+      name: 'Biznes',
       act: false,
     },
     {
@@ -24,7 +21,7 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
     },
     {
       id: 4,
-      name: 'Biznes',
+      name: 'Jahon adabiyoti',
       act: false,
     },
     {
@@ -34,6 +31,18 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
     },
   ])
   const [categorCount, setCategorCount] = useState(1)
+  const [part, setpart] = useState(12);
+  const [data, setData] = useState(categorObj.slice(0, part));
+
+  const newArrBtn = []
+  let parts = categorObj.length / part
+  for (let i = 1; i <= parts; i++) newArrBtn.push(i);
+
+  const handlerPagenation = (e) => {
+    let end = (e.target.id - 1) * part
+    let partsArr = categorObj.slice(end, (part + end))
+    setData(partsArr);
+  }
 
   const categorFunc = (e) => {
     let num = Math.floor(e.target.id)
@@ -55,22 +64,23 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
 
     switch (e.target.textContent) {
       case 'Jahon adabiyoti':
-        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'jahon'))
+        setData(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'jahon'))
         break;
       case 'Diniy':
-        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
+        setData(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       case 'Mustaqillik davri':
-        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'uzbek'))
+        setData(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === 'uzbek'))
         break;
       case 'Biznes':
-        setNewCategorArr(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
+        setData(categorObj.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       default:
-        setNewCategorArr(categorObj)
+        setData(categorObj)
         break;
     }
   }
+
 
   return (
     <>
@@ -95,11 +105,15 @@ function Categories({ categorObj, setNewCategorArr, newCategorArr }) {
             <div className="categor__menus catmenus">
               <Card
                 categorObj={categorObj}
-                newCategorArr={newCategorArr}
+                newCategorArr={data}
                 setNewCategorArr={setNewCategorArr}
               />
             </div>
-            <Pagnition />
+            <div className="btns__box">
+              {newArrBtn && newArrBtn.map((e, i) => (
+                <button className='pag__btns' onClick={handlerPagenation} key={i} id={e}>{e}</button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

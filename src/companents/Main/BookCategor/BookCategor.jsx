@@ -10,7 +10,7 @@ function BookCategor({ object, setNewBookArr, newBookArr, newCategorArr, setNewC
     },
     {
       id: 2,
-      name: 'Jahon adabiyoti',
+      name: 'Biznes',
       act: false,
     },
     {
@@ -20,7 +20,7 @@ function BookCategor({ object, setNewBookArr, newBookArr, newCategorArr, setNewC
     },
     {
       id: 4,
-      name: 'Biznes',
+      name: 'Jahon adabiyoti',
       act: false,
     },
     {
@@ -30,6 +30,18 @@ function BookCategor({ object, setNewBookArr, newBookArr, newCategorArr, setNewC
     },
   ])
   const [categorCount, setCategorCount] = useState(1)
+  const [part, setpart] = useState(6);
+  const [data, setData] = useState(newBookArr.slice(0, part));
+
+  const newArrBtn = []
+  let parts = newBookArr.length / part
+  for (let i = 1; i <= parts; i++) newArrBtn.push(i);
+
+  const handlerPagenation = (e) => {
+    let end = (e.target.id - 1) * part
+    let partsArr = newBookArr.slice(end, (part + end))
+    setData(partsArr);
+  }
 
   const categorFunc = (e) => {
     let num = Math.floor(e.target.id)
@@ -49,70 +61,26 @@ function BookCategor({ object, setNewBookArr, newBookArr, newCategorArr, setNewC
         }
       }))
 
-    // switch (e.target.textContent) {
-    //   case 'Jahon adabiyoti':
-    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === 'jahon'))
-    //     break;
-    //   case 'Diniy':
-    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
-    //     break;
-    //   case 'Mustaqillik davri':
-    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === 'uzbek'))
-    //     break;
-    //   case 'Biznes':
-    //     setNewBookArr(object.filter(itm => itm.bookObj.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
-    //     break;
-    //   default:
-    //     setNewBookArr(object)
-    //     break;
-    // }
-
     switch (e.target.textContent) {
       case 'Jahon adabiyoti':
-        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === 'jahon')
-          // console.log(newCategorArr);
-          // console.log(itm);
-          // return obj
-
-          // })
-          // return obj
-        ))
+        setData(object.filter(itm => itm.genre.toLocaleLowerCase() === 'jahon'))
         break;
       case 'Diniy':
-        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase())
-          // console.log(itm);
-          // console.log(newCategorArr);
-          // return obj
-
-          // })
-          // return obj
-        ))
+        setData(object.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       case 'Mustaqillik davri':
-        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === 'uzbek')
-          // console.log(itm);
-          // console.log(newCategorArr);
-          // return obj
-
-          // })
-          // return obj
-        ))
+        setData(object.filter(itm => itm.genre.toLocaleLowerCase() === 'uzbek'))
         break;
       case 'Biznes':
-        setNewCategorArr(object.filter(obj => obj.bookObj.forEach(itm => itm.bookGenre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase())
-          // console.log(itm);
-          // console.log(newCategorArr);
-          // return obj
-
-          // })
-          // return obj
-        ))
+        setData(object.filter(itm => itm.genre.toLocaleLowerCase() === e.target.textContent.toLocaleLowerCase()))
         break;
       default:
-        setNewCategorArr(object)
+        setData(object)
         break;
     }
+    handlerPagenation()
   }
+
   return (
     <>
       <section className='main__categor categor'>
@@ -134,7 +102,12 @@ function BookCategor({ object, setNewBookArr, newBookArr, newCategorArr, setNewC
             </div>
 
             <div className="categor__menus bmenus">
-              <BookCards object={object} newCategorArr={newCategorArr} setNewBookArr={setNewBookArr} />
+              <BookCards object={object} newBookArr={data} setNewBookArr={setNewBookArr} />
+            </div>
+            <div className="btns__box">
+              {newArrBtn && newArrBtn.map((e, i) => (
+                <button className='pag__btns' onClick={handlerPagenation} key={i} id={e}>{e}</button>
+              ))}
             </div>
           </div>
         </div>

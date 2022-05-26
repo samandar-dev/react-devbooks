@@ -22,9 +22,11 @@ function DropDoun() {
               <button className='hecate__drop_btn'><i class='bx bx-user-circle'></i> Profile</button>
             </li>
           </Link>
-          <li className="hecate__drop_item">
-            <button className='hecate__drop_btn'><i class='bx bx-cog'></i> Setting</button>
-          </li>
+          <Link to={"/EditPages"} className="link">
+            <li className="hecate__drop_item">
+              <button className='hecate__drop_btn'><i class='bx bx-cog'></i> Setting</button>
+            </li>
+          </Link>
         </ul>
       </div>
     </>
